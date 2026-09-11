@@ -23,6 +23,6 @@ I build tools and write code at the intersection of language models and real-wor
 ---
 
 <!--
-Hi! I'm kylie-sparks, and this README appears on my GitHub profile.
-You can customise it at https://github.com/kylie-sparks/kylie-sparks
+Hi! I'm kyliesparks, and this README appears on my GitHub profile.
+You can customise it at https://github.com/kyliesparks/kyliesparks
 -->
