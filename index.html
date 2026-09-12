@@ -4,18 +4,65 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kylie Sparks — AI Engineer & Open-Source Builder</title>
-  <meta name="description" content="Kylie Sparks is an AI engineer building tools that think. Open-source maintainer. Coffee-fueled.">
-  <meta name="author" content="Kylie Sparks">
+  <meta name="description" content="AI engineer building tools that think. Open-source maintainer. Working on probable-memory, a probabilistic memory layer for LLM agents.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Kylie Sparks — AI Engineer & Open-Source Builder">
   <meta property="og:description" content="Building tools at the intersection of language models and real-world workflows.">
-  <meta property="og:image" content="https://kyliesparks.github.io/og-image.png">
-  <meta property="og:url" content="https://kyliesparks.github.io/">
+  <meta property="og:image" content="https://kyliesparks.github.io/kyliesparks/og-image.png">
+  <meta property="og:url" content="https://kyliesparks.github.io/kyliesparks/">
   <meta property="og:type" content="website">
 
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kylie Sparks — AI Engineer & Open-Source Builder">
+  <meta name="twitter:description" content="Building tools at the intersection of language models and real-world workflows.">
+
   <!-- Favicons -->
-  <link rel="icon" href="data:,"><link rel="shortcut icon" href="data:,">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="favicon.svg">
+  <link rel="mask-icon" href="favicon.svg" color="#6f42c1">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Kylie Sparks",
+    "jobTitle": "AI Engineer",
+    "url": "https://kyliesparks.github.io/kyliesparks/",
+    "sameAs": [
+      "https://github.com/kyliesparks",
+      "https://twitter.com/kyliesparks",
+      "https://www.linkedin.com/in/kyliesparks",
+      "https://kylie-sparks.dev"
+    ],
+    "email": "kylie@kylie-sparks.dev",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Seattle",
+      "addressRegion": "WA",
+      "addressCountry": "US"
+    },
+    "knowsAbout": [
+      "AI Agents", "LLM Memory Systems", "Probabilistic Data Structures",
+      "Rust", "TypeScript", "Python", "MCP", "Agentic Loop Engineering"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Kylie Sparks",
+    "url": "https://kyliesparks.github.io/kyliesparks/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://github.com/kyliesparks?q={search_term}",
+      "queryInput": "search_term"
+    }
+  }
+  </script>
 
   <style>
     /* ── Design tokens ── */
@@ -23,26 +70,31 @@
       --font-sans:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
       --font-mono:  "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
       --radius:     0.75rem;
+      --radius-sm:  0.4rem;
       --transition: 0.3s ease;
+      --transition-fast: 0.2s ease;
       --max-width:  46rem;
+      --gap:        1.5rem;
     }
+    @media (max-width: 640px) { :root { --gap: 1rem; } }
 
-    /* ── Light theme ── */
+    /* ── Themes ── */
     :root {
       --bg:        #ffffff;
       --surface:   #fafafa;
+      --surface-2: #f0f0f0;
       --stroke:    #e5e5e5;
       --text:      #1a1a1a;
       --muted:     #6b6b6b;
       --link:      #0969da;
-      --link-hover: #0550a3;
+      --link-hover:#0550a3;
       --accent:    #6f42c1;
+      --border-radius: 0.75rem;
     }
-
-    /* ── Dark theme ── */
     [data-theme="dark"] {
       --bg:        #0a0a0a;
       --surface:   #141414;
+      --surface-2: #1a1a1a;
       --stroke:    #2a2a2a;
       --text:      #e5e5e5;
       --muted:     #9a9a9a;
@@ -60,24 +112,31 @@
       line-height: 1.7;
       background: var(--bg);
       color: var(--text);
-      border-color: var(--stroke);
+      overflow-x: hidden;
     }
     body.border {
       border-left: 1px solid var(--stroke);
       border-right: 1px solid var(--stroke);
     }
     img { max-width: 100%; height: auto; display: block; }
-    a { color: var(--link); text-decoration: none; transition: var(--transition); }
+    a { color: var(--link); text-decoration: none; transition: var(--transition-fast); }
     a:hover { color: var(--link-hover); }
     ul { list-style: none; }
+    p { margin-bottom: 1rem; }
 
     /* ── Layout ── */
     header { padding: 3rem var(--gap) 1.5rem; }
     main   { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--gap); }
     footer { padding: 2.5rem var(--gap) 4rem; border-top: 1px solid var(--stroke); }
 
-    :root { --gap: 1.5rem; }
-    @media (max-width: 640px) { :root { --gap: 1rem; } }
+    section { margin: 3.5rem 0; }
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--stroke);
+    }
 
     /* ── Hero ── */
     .hero-badge {
@@ -109,7 +168,7 @@
       margin-top: 1.5rem;
       flex-wrap: wrap;
     }
-    .social-links a {
+    .social-link {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
@@ -117,69 +176,143 @@
       font-weight: 500;
       padding: 0.55rem 1rem;
       border: 1px solid var(--stroke);
-      border-radius: var(--radius);
+      border-radius: var(--border-radius);
       background: var(--surface);
-      transition: var(--transition);
+      transition: var(--transition-fast);
     }
-    .social-links a:hover {
+    .social-link:hover {
       background: var(--bg);
       border-color: var(--link);
       color: var(--link-hover);
     }
 
-    /* ── Section headings ── */
-    section { margin: 3.5rem 0; }
-    .section-title {
-      font-size: 1.15rem;
-      font-weight: 600;
-      margin-bottom: 1.25rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid var(--stroke);
+    /* ── Navigation dots ── */
+    .nav-dots {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    .nav-dots a {
+      display: 8px;
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--stroke);
+      transition: var(--transition-fast);
+    }
+    .nav-dots a:hover { background: var(--link); }
+
+    /* ── Skills grid ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 0.6rem;
+    }
+    .skill-tag {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.4rem 0.8rem;
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius-sm);
+      background: var(--surface);
+      transition: var(--transition-fast);
+    }
+    .skill-tag:hover {
+      background: var(--bg);
+      border-color: var(--link);
+      color: var(--link-hover);
+    }
+    .skill-level {
+      opacity: 0.6;
+      font-size: 0.75rem;
     }
 
-    /* ── Projects grid ── */
+    /* ── Projects ── */
     .project {
       border: 1px solid var(--stroke);
-      border-radius: var(--radius);
+      border-radius: var(--border-radius);
       padding: 1.5rem;
       background: var(--surface);
       transition: var(--transition);
+      margin-bottom: 1.5rem;
     }
     .project:hover {
       border-color: var(--link);
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
     }
-    .project h3 { font-size: 1.05rem; margin-bottom: 0.4rem; }
-    .project p  { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.75rem; }
-    .project .tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-    .project .tags span {
-      font-size: 0.75rem;
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.5rem;
+    }
+    .project h3 { font-size: 1.05rem; font-weight: 600; }
+    .project h3 a { color: var(--text); }
+    .project h3 a:hover { color: var(--link); }
+    .stars { font-size: 0.8rem; color: var(--muted); display: flex; align-items: center; gap: 0.3rem; }
+    .project-description { font-size: 0.9rem; color: var(--muted); margin: 0.5rem 0; }
+    .project-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.7rem; }
+    .project-tags span {
+      font-size: 0.72rem;
       font-weight: 500;
-      padding: 0.2rem 0.6rem;
-      border-radius: 0.3rem;
-      background: var(--surface);
+      padding: 0.15rem 0.6rem;
+      border-radius: var(--radius-sm);
+      background: var(--surface-2);
       border: 1px solid var(--stroke);
+      color: var(--muted);
     }
-    .stars { font-size: 0.8rem; color: var(--muted); }
+    .project-links { display: flex; gap: 1rem; margin-top: 0.75rem; }
+    .project-links a { font-size: 0.85rem; font-weight: 500; display: inline-flex; align-items: center; gap: 0.3rem; }
 
-    /* ── Contact form ── */
-    .contact-grid { display: grid; gap: 1rem; }
-    input, textarea {
-      width: 100%;
-      padding: 0.65rem 0.9rem;
+    /* ── Focus areas ── */
+    .focus-grid { display: grid; gap: 0.75rem; }
+    .focus-item {
+      padding: 1rem 1.25rem;
       border: 1px solid var(--stroke);
-      border-radius: var(--radius);
-      font-family: inherit;
-      font-size: 0.9rem;
+      border-radius: var(--border-radius);
       background: var(--surface);
-      color: var(--text);
-      transition: var(--transition);
+      transition: var(--transition-fast);
     }
-    input:focus, textarea:focus {
-      outline: none;
+    .focus-item:hover {
       border-color: var(--link);
-      box-shadow: 0 0 0 2px color-mix(in srgb, var(--link) 20%, transparent);
+      background: var(--bg);
     }
+    .focus-item h3 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.3rem; }
+    .focus-item p { font-size: 0.85rem; color: var(--muted); }
+
+    /* ── Contact ── */
+    .contact-method {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.7rem 1rem;
+      border: 1px solid var(--stroke);
+      border-radius: var(--border-radius);
+      background: var(--surface);
+      transition: var(--transition-fast);
+    }
+    .contact-method:hover {
+      border-color: var(--link);
+      background: var(--bg);
+    }
+    .contact-method .icon { font-size: 1.1rem; }
+    .contact-method .label { font-size: 0.8rem; font-weight: 500; }
+    .contact-method a { font-size: 0.8rem; color: var(--muted); }
+    .contact-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* ── Footer links ── */
+    .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.8rem; color: var(--muted); }
+    .footer-links a:hover { color: var(--link); }
+
+    /* ── Copyright bar ── */
+    .copyright { font-size: 0.78rem; color: var(--muted); margin-top: 1.5rem; }
 
     /* ── Theme toggle ── */
     .theme-toggle {
@@ -196,21 +329,66 @@
       align-items: center;
       justify-content: center;
       font-size: 1.1rem;
-      transition: var(--transition);
+      transition: var(--transition-fast);
       z-index: 100;
     }
     .theme-toggle:hover {
       border-color: var(--link);
       background: var(--bg);
+      transform: scale(1.05);
     }
     @media (max-width: 640px) {
       .theme-toggle { top: 1rem; right: 0.75rem; }
+    }
+
+    /* ── Back to top ── */
+    .back-to-top {
+      position: fixed;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      background: var(--surface);
+      border: 1px solid var(--stroke);
+      border-radius: 999px;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition-fast);
+      z-index: 99;
+    }
+    .back-to-top.show { opacity: 1; visibility: visible; }
+    .back-to-top:hover {
+      border-color: var(--link);
+      background: var(--bg);
+      transform: scale(1.05);
+    }
+    @media (max-width: 640px) {
+      .back-to-top { bottom: 1rem; right: 0.75rem; }
+    }
+
+    /* ── Fade-in animation ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 <body class="border">
   <!-- Theme toggle -->
   <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌓</button>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
 
   <header>
     <div class="hero-badge">✨ Open to new opportunities</div>
@@ -221,98 +399,167 @@
     </p>
 
     <div class="social-links">
-      <a href="https://github.com/kyliesparks">GitHub <span style="opacity:0.5">→</span></a>
-      <a href="https://twitter.com/kyliesparks">X (Twitter) <span style="opacity:0.5">→</span></a>
-      <a href="https://www.linkedin.com/in/kyliesparks">LinkedIn <span style="opacity:0.5">→</span></a>
-      <a href="https://kylie-sparks.dev">Personal site <span style="opacity:0.5">→</span></a>
-      <a href="mailto:kylie@kylie-sparks.dev">Email <span style="opacity:0.5">→</span></a>
+      <a class="social-link" href="https://github.com/kyliesparks">GitHub →</a>
+      <a class="social-link" href="https://twitter.com/kyliesparks">X (Twitter) →</a>
+      <a class="social-link" href="https://www.linkedin.com/in/kyliesparks">LinkedIn →</a>
+      <a class="social-link" href="https://kylie-sparks.dev">Personal site →</a>
+      <a class="social-link" href="mailto:kylie@kylie-sparks.dev">Email →</a>
     </div>
   </header>
 
   <main>
     <!-- About -->
-    <section>
+    <section class="fade-in">
       <h2 class="section-title">About</h2>
       <p>
-        I’m an AI engineer who builds tools that bridge the gap between
-        cutting-edge research and real-world applications. My work focuses on
-        agentic loop engineering, probabilistic memory systems for LLMs, and
-        Rust-based infrastructure for scalable AI workloads.
+        I’m an AI engineer who builds tools that bridge the gap between cutting-edge
+        research and real-world applications. My work focuses on agentic loop
+        engineering, probabilistic memory systems for LLMs, and Rust-based
+        infrastructure for scalable AI workloads.
       </p>
-      <p style="margin-top: 0.75rem;">
+      <p>
+        Currently, I’m building <strong>probable-memory</strong> — a probabilistic
+        memory layer that helps long-running LLM agents manage context efficiently
+        through confidence-aware retention and decay.
+      </p>
+      <p>
         When I’m not coding, you’ll find me chasing the perfect espresso shot,
         exploring the Pacific Northwest with my camera, or mentoring the next
         generation of AI engineers.
       </p>
     </section>
 
+    <!-- Skills -->
+    <section class="fade-in">
+      <h2 class="section-title">Skills</h2>
+      <p style="color: var(--muted); font-size: 0.85rem; margin-bottom: 1rem;">
+        Core competencies span AI/ML infrastructure, systems programming, and
+        full-stack development.
+      </p>
+      <div class="skills-grid">
+        <span class="skill-tag">Python <span class="skill-level">●●●●●</span></span>
+        <span class="skill-tag">TypeScript <span class="skill-level">●●●●</span></span>
+        <span class="skill-tag">Rust <span class="skill-level">●●●</span></span>
+        <span class="skill-tag">Go <span class="skill-level">●●●</span></span>
+        <span class="skill-tag">LLM Agents <span class="skill-level">●●●●</span></span>
+        <span class="skill-tag">MCP <span class="skill-level">●●●</span></span>
+        <span class="skill-tag">Agentic Loops <span class="skill-level">●●●●</span></span>
+        <span class="skill-tag">Probabilistic DS <span class="skill-level">●●●</span></span>
+        <span class="skill-tag">System Design <span class="skill-level">●●●●</span></span>
+        <span class="skill-tag">API Design <span class="skill-level">●●●●</span></span>
+        <span class="skill-tag">Docker <span class="skill-level">●●●</span></span>
+        <span class="skill-tag">Linux <span class="skill-level">●●●●</span></span>
+      </div>
+    </section>
+
     <!-- Projects -->
-    <section>
+    <section class="fade-in">
       <h2 class="section-title">Projects</h2>
 
       <div class="project">
-        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <div class="project-header">
           <h3><a href="https://github.com/kyliesparks/probable-memory">probable-memory</a></h3>
           <span class="stars">⭐ 0</span>
         </div>
-        <p>
-          A probabilistic memory layer for LLM agents. Enables agents to
-          store, retrieve, and forget information with confidence-aware
-          decay — so long-running agents don’t drown in context.
+        <p class="project-description">
+          A probabilistic memory layer for LLM agents. Enables agents to store,
+          retrieve, and forget information with confidence-aware decay — so
+          long-running agents don’t drown in context. Written in TypeScript with
+          a Rust core for performance-critical operations.
         </p>
-        <div class="tags">
+        <div class="project-tags">
           <span>TypeScript</span>
           <span>Rust</span>
+          <span>WASM</span>
           <span>LLM Agents</span>
           <span>Open Source</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/kyliesparks/probable-memory">Source →</a>
+          <a href="https://github.com/kyliesparks/probable-memory/issues">Issues →</a>
         </div>
       </div>
     </section>
 
-    <!-- Experience -->
-    <section>
-      <h2 class="section-title">Experience</h2>
-      <p>
-        Currently building AI tools independently, exploring how probabilistic
-        data structures can make memory systems more efficient for long-running
-        agents. Previously worked on <em>infra and tooling for ML research
-        workflows</em>.
-      </p>
+    <!-- Focus areas -->
+    <section class="fade-in">
+      <h2 class="section-title">Focus Areas</h2>
+      <div class="focus-grid">
+        <div class="focus-item">
+          <h3>Agentic Loop Engineering</h3>
+          <p>Designing robust feedback loops for LLM agents that can plan,
+          act, and reflect without falling into infinite loops or context bloat.</p>
+        </div>
+        <div class="focus-item">
+          <h3>Probabilistic Memory Systems</h3>
+          <p>Building memory layers that use Bloom filters, HyperLogLog, and
+          count-min sketches to store agent knowledge with bounded error and
+          efficient forgetting curves.</p>
+        </div>
+        <div class="focus-item">
+          <h3>MCP Integration</h3>
+          <p>Developing Model Context Protocol servers that bridge language
+          models with real-world tools, APIs, and data sources.</p>
+        </div>
+        <div class="focus-item">
+          <h3>Rust for AI Infrastructure</h3>
+          <p>Leveraging Rust's performance and safety guarantees to build the
+          systems-level components that AI agents depend on — memory allocators,
+          embedding storage, and async runtimes.</p>
+        </div>
+      </div>
     </section>
 
     <!-- Contact -->
-    <section>
+    <section class="fade-in">
       <h2 class="section-title">Say hello</h2>
       <p>
         I’m open to interesting conversations, collaboration opportunities,
-        and speaking engagements. Drop me a line at
-        <a href="mailto:kylie@kylie-sparks.dev">kylie@kylie-sparks.dev</a>
-        or reach out on
-        <a href="https://twitter.com/kyliesparks">X</a> /
-        <a href="https://www.linkedin.com/in/kyliesparks">LinkedIn</a>.
+        and speaking engagements. Reach out via any of the channels below.
       </p>
-      <div class="contact-grid" style="margin-top: 1.5rem;">
-        <input type="text" placeholder="Your name" readonly>
-        <input type="email" placeholder="Your email" readonly>
-        <textarea rows="4" placeholder="Your message (open your email client to actually send)" readonly></textarea>
-        <p style="font-size:0.8rem; color:var(--muted);">
-          This is a static GitHub Pages site. Email me directly at
-          <a href="mailto:kylie@kylie-sparks.dev">kylie@kylie-sparks.dev</a>
-          to start a conversation.
-        </p>
+      <div class="contact-row" style="margin-top: 1rem;">
+        <div class="contact-method">
+          <span class="icon">📧</span>
+          <div>
+            <div class="label">Email</div>
+            <a href="mailto:kylie@kylie-sparks.dev">kylie@kylie-sparks.dev</a>
+          </div>
+        </div>
+        <div class="contact-method">
+          <span class="icon">💼</span>
+          <div>
+            <div class="label">LinkedIn</div>
+            <a href="https://www.linkedin.com/in/kyliesparks">in/kyliesparks</a>
+          </div>
+        </div>
+        <div class="contact-method">
+          <span class="icon">🐦</span>
+          <div>
+            <div class="label">X / Twitter</div>
+            <a href="https://twitter.com/kyliesparks">@kyliesparks</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p style="font-size:0.8rem; color:var(--muted);">
-      &copy; 2026 Kylie Sparks. This site is <a href="https://github.com/kyliesparks/kyliesparks">open source</a>
+    <div class="footer-links">
+      <a href="https://github.com/kyliesparks/kyliesparks">Source ·</a>
+      <a href="mailto:kylie@kylie-sparks.dev">Contact ·</a>
+      <a href="https://kylie-sparks.dev">Personal site ·</a>
+      <a href="https://github.com/kyliesparks">GitHub ·</a>
+      <a href="https://twitter.com/kyliesparks">X/Twitter</a>
+    </div>
+    <p class="copyright">
+      &copy; 2026 Kylie Sparks. This site is
+      <a href="https://github.com/kyliesparks/kyliesparks">open source</a>
       on GitHub, hosted via GitHub Pages.
     </p>
   </footer>
 
-  <!-- Theme script -->
   <script>
+    /* ── Theme toggle ── */
     const toggle = document.getElementById('theme-toggle');
     const root = document.documentElement;
     const saved = localStorage.getItem('theme');
@@ -329,6 +576,30 @@
         localStorage.setItem('theme', 'dark');
       }
     });
+
+    /* ── Back to top button ── */
+    const backToTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    /* ── Fade-in on scroll ── */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>

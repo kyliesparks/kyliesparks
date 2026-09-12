@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page not found · Kylie Sparks</title>
+  <meta name="description" content="You've wandered off the beaten path. Let me help you find your way back.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Page not found · Kylie Sparks">
+  <meta property="og:description" content="You've wandered off the beaten path. Let me help you find your way back.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicons -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="favicon.svg">
+
+  <style>
+    :root {
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+      --bg: #ffffff;
+      --surface: #fafafa;
+      --stroke: #e5e5e5;
+      --text: #1a1a1a;
+      --muted: #6b6b6b;
+      --link: #0969da;
+      --link-hover: #0550a3;
+    }
+    [data-theme="dark"] {
+      --bg: #0a0a0a;
+      --surface: #141414;
+      --stroke: #2a2a2a;
+      --text: #e5e5e5;
+      --muted: #9a9a9a;
+      --link: #58a6ff;
+      --link-hover: #3391ff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      background: var(--bg);
+      color: var(--text);
+      border-left: 1px solid var(--stroke);
+      border-right: 1px solid var(--stroke);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      max-width: 32rem;
+      text-align: center;
+      padding: 2rem;
+    }
+    .error-code {
+      font-size: clamp(3rem, 8vw, 5rem);
+      font-weight: 800;
+      font-family: var(--font-mono);
+      color: var(--muted);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    h1 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    p {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+    .home-link {
+      display: inline-block;
+      padding: 0.6rem 1.4rem;
+      background: var(--surface);
+      border: 1px solid var(--stroke);
+      border-radius: 999px;
+      font-weight: 500;
+      transition: 0.2s ease;
+    }
+    .home-link:hover {
+      background: var(--bg);
+      border-color: var(--link);
+      color: var(--link-hover);
+    }
+    .ghost {
+      opacity: 0.4;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="error-code">404</div>
+    <h1>Page not found</h1>
+    <p>
+      You’ve wandered off the beaten path — this page doesn’t exist (yet).
+      Let me help you find your way back.
+    </p>
+    <a class="home-link" href="https://kyliesparks.github.io/kyliesparks/">&larr; Back to home</a>
+    <p class="ghost">
+      Or check out my <a href="https://github.com/kyliesparks" style="color:var(--link);">GitHub profile</a>.
+    </p>
+  </div>
+
+  <script>
+    /* Preserve theme preference */
+    const saved = localStorage.getItem('theme');
+    if (saved) document.documentElement.setAttribute('data-theme', saved);
+  </script>
+</body>
+</html>
